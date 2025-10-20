@@ -1,0 +1,13 @@
+{
+  "background_color": "#5ee58d",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "adzoulap-creator",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "adzoulap-creator",
+  "start_url": "/",
+  "theme_color": "#f8faf8",
+  "description": "Au coeur de l'apprendissage",
+  "lang": "fr"
+}

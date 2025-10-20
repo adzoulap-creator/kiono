@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/unique.css">
+</head>
+<body>
+    <nav class="navBarParent">
+        <div class="logo"><img src = "../static/img/cacher/cadre-floral-colore-en-papier~2 (2).jpg" width="50"></div>
+        <div class="navBar">       
+            <button>Accueil</button>
+            <button>Creation </button>
+            <button>Affichage </button>
+        </div>
+    </nav>
+    <div class="rideau gauche"></div>
+    <div class="rideau droit"></div>
+    <div class="accueil">
+        <h1 class="titre">Bienvenu sur Innovation au coeur de la TECH</h1>
+    </div>
+    <button type="button" onclick="viderLocalStorage()">Vider le localStorage</button>
+
+        <div id="cartesContainer" style="margin: 30px;">
+
+        </div>
+    <section id="demande">
+        <button type="button" onclick="creationSpecimen()">Creation  d'un specimen</button>
+    </section>
+
+    <section id="specimen">
+        <div class="importation">
+            <button type="button">
+                Importation du Specimen 
+                <input type="file" name="profile" id="profile">
+            </button>
+            <div class="imageContainer" id="imageContainer" style="position: relative;">
+                <img src="" id ="imageInput" name="imageInput" width = "50%">
+            </div>
+            <button type="button" onclick="placerChamps()">Placer les champs</button>
+            <button onclick="sauvegarder()">Sauvegarder</button>
+            <button onclick="charger()">Charger</button>
+
+            <div class="checkbox" id="checkbox">
+                <label>nom<input type="checkbox" value="nom" id="nom"></label>
+                <label>prenom<input type="checkbox" value="prenom" id="prenom"></label>
+                <label>profile<input type="checkbox" value="profile" id="profile"></label>
+                <label>adresse<input type="checkbox" value="adresse" id="adresse"></label>
+                <label>telepone<input type="checkbox" value="telepone" id="telepone"></label>
+                <label>matricule<input type="checkbox" value="matricule" id="matricule"></label>
+                <label>classe<input type="checkbox" value="classe" id="classe"></label>
+                <button type="button" onclick="placer()">Placer au Specimen</button>
+            </div>
+        </div>
+        <button type="button" onclick="    
+        document.getElementById('specimen').style.display = 'none';
+        document.getElementById('demande').style.display = 'block';">Retour</button>
+    </section>
+        <div id="formulairesContainer"></div>
+        <button onclick="genererFormulaires()">Générer les formulaires</button>
+
+        <div class="formulaire" id="formulaire">
+            <button type="button" onclick="    
+                document.getElementById('formulaire').style.display = 'none';
+                document.getElementById('demande').style.display = 'block';">Retour</button>
+        </div>
+    <section id ="afficher">
+        <button type="button" onclick="afficherCadres()">Coller un cadre</button>
+        <button type="button" onclick="afficherCachers()">Coller un cacher</button>
+
+        <button type="button" onclick="    
+            document.getElementById('formulaire').style.display = 'block';
+            document.getElementById('afficher').style.display = 'none';">Retour</button>
+    </section>
+
+    <section id="cadreCacher" class="cadreCacher">
+        <div class = "cadre" id="cadre">
+            <div><img src = "../static/img/cadre/cadre1.jpg" width="150px"></div>
+            <div><img src = "../static/img/cadre/cadre2.jpg" width="150px"></div>
+            <div><img src = "../static/img/cadre/cadre3.jpg" width="150px"></div>
+            <div><img src = "../static/img/cadre/cadre4.png" width="150px"></div>
+        </div>
+        <div class = "cacher" id = "cacher">
+            <div><img src = "../static/img/cacher/cacher1.jpg" width="150px"></div>
+            <div><img src = "../static/img/cacher/cacher1.jpg" width="150px"></div>
+            <div><img src = "../static/img/cacher/cacher1.jpg" width="150px"></div>
+            <div><img src = "../static/img/cacher/cacher1.jpg" width="150px"></div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="../static/unique.js"></script>
+</body>
+</html>
+
+
+
+
+

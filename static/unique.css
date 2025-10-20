@@ -1,0 +1,90 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+#specimen{
+    display: none;
+}
+#formulaire{
+    display: none;
+}
+#afficher{
+    display: none;
+}
+.rideau{
+    background-color: rgb(243, 245, 243);
+    width: 50vw;
+    height: 50px;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    transition: transform 1s;
+}
+.gauche{
+    left: 0;
+    transform: translateX(0);
+    animation: ouvrir-gauche 2s forwards;
+}
+.droit{
+    right: 0;
+    transform: translateX(0);
+    animation: ouvrir-droit 2s forwards;
+}
+.accueil .titre{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    transition: font-size 1s, opacity 1s;
+    animation: agrandir-titre 4s forwards;
+    white-space: nowrap;
+}
+@keyframes ouvrir-gauche {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes ouvrir-droit{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes agrandir-titre {
+    0% {
+        font-size: 24px;
+        opacity: 1;
+    }
+    50% {
+        font-size: 64px;
+        opacity: 1;
+    }  
+    100% {
+        font-size: 100px;
+        opacity: 0;
+        visibility: hidden;
+    } 
+}
+.cadreCacher {
+    display: none;
+}
+.navBarParent{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(10 , 300 , 10 , 0.4);
+}
+.navBarParent .logo img{
+    border-radius: 100%;
+}
+.navBarParent .navBar button{
+    border: 0px solid black;
+    font-size: 25px;
+    background-color: rgba(10 , 300 , 10 , 0);
+}
+

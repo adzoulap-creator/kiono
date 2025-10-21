@@ -2,12 +2,24 @@
   "background_color": "#5ee58d",
   "dir": "ltr",
   "display": "standalone",
-  "name": "adzoulap-creator",
+  "name": "adzoulap-créateur",
   "orientation": "any",
   "scope": "/",
-  "short_name": "adzoulap-creator",
+  "short_name": "adzoulap",
   "start_url": "/",
   "theme_color": "#f8faf8",
-  "description": "Au coeur de l'apprendissage",
-  "lang": "fr"
+  "description": "Au coeur de l'apprentissage",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/static/img/icon1.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/img/icon1.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

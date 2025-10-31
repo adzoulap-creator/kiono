@@ -13,7 +13,7 @@ self.addEventListener('install', async (event) => {
   event.waitUntil(
     caches.open(CACHE)
       .then((cache) => cache.addAll([
-        offlineFallbackPage,
+        '/kiono/index.html',  // ✅ on ajoute explicitement la page principale
         '/kiono/static/unique.css',
         '/kiono/static/unique.js',
         '/kiono/static/img/cadre/cadre1.jpg',
@@ -23,6 +23,7 @@ self.addEventListener('install', async (event) => {
         '/kiono/static/img/cacher/cacher1.jpg'
       ]))
   );
+  self.skipWaiting();
 });
 
 if (workbox.navigationPreload.isSupported()) {
@@ -30,19 +31,20 @@ if (workbox.navigationPreload.isSupported()) {
 }
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        const preloadResp = await event.preloadResponse;
-        if (preloadResp) return preloadResp;
+  event.respondWith(
+    caches.match(event.request)
+      .then((cachedResponse) => {
+        // ✅ Si la ressource est dans le cache, on la renvoie
+        if (cachedResponse) {
+          return cachedResponse;
+        }
 
-        const networkResp = await fetch(event.request);
-        return networkResp;
-      } catch (error) {
-        const cache = await caches.open(CACHE);
-        const cachedResp = await cache.match(offlineFallbackPage);
-        return cachedResp;
-      }
-    })());
-  }
+        // ✅ Sinon, on tente de la récupérer sur le réseau
+        return fetch(event.request).catch(async () => {
+          // ⚠️ Si échec réseau (hors ligne), on sert la page de secours
+          const cache = await caches.open(CACHE);
+          return cache.match(offlineFallbackPage);
+        });
+      })
+  );
 });

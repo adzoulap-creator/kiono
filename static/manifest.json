@@ -4,6 +4,7 @@
   "display": "standalone",
   "name": "adzoulap-créateur",
   "orientation": "any",
+  "id": "adzoulap-creator",
   "scope": "/kiono/",
   "short_name": "adzoulap",
   "start_url": "/kiono/",
@@ -13,7 +14,7 @@
   "icons": [
     {
       "src": "/kiono/static/img/icon1.png",
-      "sizes": "192x192",
+      "sizes": "1024x1024",
       "type": "image/png"
     },
     {

@@ -91,12 +91,12 @@
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
+
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('static/pwabuilder-sw.js')
-            .then(() => console.log('Service Worker enregistré !'))
-            .catch((err) => console.error(err));
+            navigator.serviceWorker.register('/static/pwabuilder-sw.js')
+            .then(() => console.log('Service Worker enregistré avec succès !'))
+            .catch((error) => console.error('Erreur lors de l’enregistrement du Service Worker :', error));
         }
     </script>
 

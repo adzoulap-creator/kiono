@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="static/unique.css">
-    <link rel="manifest" href="/static/manifest.json">
+    <link rel="manifest" href="static/manifest.json">
 
 </head>
 <body>
@@ -94,7 +94,7 @@
     
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/static/pwabuilder-sw.js')
+            navigator.serviceWorker.register('static/pwabuilder-sw.js')
             .then(() => console.log('Service Worker enregistré !'))
             .catch((err) => console.error(err));
         }

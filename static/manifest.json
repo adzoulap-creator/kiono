@@ -12,14 +12,14 @@
   "lang": "fr",
   "icons": [
     {
-      "src": "/static/img/icon1.jpg",
+      "src": "static/img/icon1.jpg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/jpg"
     },
     {
-      "src": "/static/img/icon1.jpg",
+      "src": "static/img/icon1.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpg"
     }
   ]
 }

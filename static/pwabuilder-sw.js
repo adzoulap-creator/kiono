@@ -1,7 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 const CACHE = "pwabuilder-page-v1";
-const offlineFallbackPage = "index.html";
+const offlineFallbackPage = "/kiono/index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -14,13 +14,13 @@ self.addEventListener('install', async (event) => {
     caches.open(CACHE)
       .then((cache) => cache.addAll([
         offlineFallbackPage,
-        'static/unique.css', // adapte le chemin selon ton projet
-        'static/unique.js',  // adapte le chemin selon ton projet
-        'static/img/cadre/cadre1.jpg',
-        'static/img/cadre/cadre2.jpg',
-        'static/img/cadre/cadre3.jpg',
-        'static/img/cadre/cadre4.png',
-        'static/img/cacher/cacher1.jpg' // attention au bon dossier
+        '/kiono/static/unique.css',
+        '/kiono/static/unique.js',
+        '/kiono/static/img/cadre/cadre1.jpg',
+        '/kiono/static/img/cadre/cadre2.jpg',
+        '/kiono/static/img/cadre/cadre3.jpg',
+        '/kiono/static/img/cadre/cadre4.png',
+        '/kiono/static/img/cacher/cacher1.jpg'
       ]))
   );
 });
@@ -34,9 +34,7 @@ self.addEventListener('fetch', (event) => {
     event.respondWith((async () => {
       try {
         const preloadResp = await event.preloadResponse;
-        if (preloadResp) {
-          return preloadResp;
-        }
+        if (preloadResp) return preloadResp;
 
         const networkResp = await fetch(event.request);
         return networkResp;

@@ -19,8 +19,8 @@ self.addEventListener('install', async (event) => {
         'static/img/cadre/cadre1.jpg',
         'static/img/cadre/cadre2.jpg',
         'static/img/cadre/cadre3.jpg',
-        'static/img/cadre/cadre4.jpg',
-        'static/img/cacher/cacher4.jpg' // attention au bon dossier
+        'static/img/cadre/cadre4.png',
+        'static/img/cacher/cacher1.jpg' // attention au bon dossier
       ]))
   );
 });
